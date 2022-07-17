@@ -3,7 +3,6 @@ public class Principal {
     public static void main(String[] args){
     Scanner inserir = new Scanner(System.in);
     String cor;
-    int x;
 
         System.out.println("Qual a cor da camisa?");
         cor = inserir.next();
@@ -12,5 +11,6 @@ public class Principal {
     if (cor.equalsIgnoreCase("branca")){
         System.out.println("funcionou");
     }
+    inserir.close();
     }
 }
