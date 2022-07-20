@@ -11,6 +11,7 @@ public class Elevador {
         capacidade = 6;
         andar_atual = 0;
         total_andares = 5;
+        System.out.println("construtor ok");
     }
 
     /*
