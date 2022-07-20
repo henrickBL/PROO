@@ -5,6 +5,7 @@ public class Elevador {
     int andar_atual; //térreo == 0
     int total_andares; //desconsiderando o térreo
     int capacidade;
+    int ocupantes;
 
     Elevador(){
         capacidade = 6;
@@ -19,7 +20,27 @@ public class Elevador {
     }
 
     void Entrar(){
-        
+        if((ocupantes + 1) <= capacidade){
+            ocupantes++;
+        }
+    }
+
+    void Sair(){
+        if(ocupantes > 0){
+            ocupantes = ocupantes - 1;
+        }
+    }
+
+    void Subir(){
+        if(andar_atual < total_andares){
+            andar_atual++;
+        }
+    }
+
+    void Descer(){
+        if(andar_atual > 0){
+            andar_atual = andar_atual - 1;
+        }
     }
     inserir.close();
 }
