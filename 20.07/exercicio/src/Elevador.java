@@ -1,11 +1,11 @@
 import java.util.Scanner;
 public class Elevador {
     Scanner inserir = new Scanner(System.in);
-    String nome;
-    int andar_atual; //térreo == 0
-    int total_andares; //desconsiderando o térreo
-    int capacidade;
-    int ocupantes;
+    private String nome;
+    private int andar_atual; //térreo == 0
+    private int total_andares; //desconsiderando o térreo
+    private int capacidade;
+    private int ocupantes;
 
     Elevador(){
         capacidade = 6;
@@ -45,5 +45,4 @@ public class Elevador {
             andar_atual = andar_atual - 1;
         }
     }
-    inserir.close();
 }

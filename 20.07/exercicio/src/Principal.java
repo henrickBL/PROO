@@ -4,6 +4,5 @@ public class Principal {
         Scanner inserir = new Scanner(System.in);
         Elevador elevador1 = new Elevador();
         
-        inserir.close();
     }
 }
