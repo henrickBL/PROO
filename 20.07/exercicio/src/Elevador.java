@@ -13,11 +13,13 @@ public class Elevador {
         total_andares = 5;
     }
 
+    /*
     Elevador(capacidade, total_andares){
         capacidade = inserir.nextInt();
         total_andares = inserir.nextInt();
 
     }
+    */
 
     void Entrar(){
         if((ocupantes + 1) <= capacidade){
