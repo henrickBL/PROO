@@ -16,7 +16,13 @@ public class Livro {
     }
 
     public void consultarLivro(){
-
+        System.out.println("Título: " + this.titulo);
+        System.out.println("Gênero: " + this.genero);
+        System.out.println("Autor: " + autor.getNome());
+        System.out.println("E-mail do autor: " + autor.getE_mail());
+        System.out.println("CEP de residência do autor: " + autor.getCEP());
+        System.out.println("Estado de residência do autor: " + autor.getEstado());
+        System.out.println("Cidade de residência do autor: " + autor.getCidade());
     }
 
     public void atualizarLivro(){

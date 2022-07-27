@@ -24,22 +24,26 @@ public class Autor {
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public String getE_mail() {
-        return e_mail;
+        return this.e_mail;
     }
 
     public String getCEP() {
-        return CEP;
+        return this.CEP;
     }
 
     public String getEstado() {
-        return estado;
+        return this.estado;
     }
 
     public String getCidade() {
-        return cidade;
+        return this.cidade;
+    }
+
+    public void changeAutor(){
+        
     }
 }
