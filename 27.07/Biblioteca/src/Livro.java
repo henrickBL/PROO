@@ -15,6 +15,9 @@ public class Livro {
         genero = inserir.nextLine();
         System.out.println("Quantos autores o livro possui? (Máx.: 4    Mín.: 1)");
         quantAutores = inserir.nextInt();
+        while (quantAutores > 4 || quantAutores < 1) {
+            quantAutores = inserir.nextInt();
+        }
         autor = new Autor[quantAutores];
         for(i = 0; i < quantAutores; i++){
             autor[i] = new Autor();
@@ -24,7 +27,9 @@ public class Livro {
     public void consultarLivro(){
         System.out.println("Título: " + this.titulo);
         System.out.println("Gênero: " + this.genero);
-        
+        for(i = 0; i < quantAutores; i++){
+            autor[i];
+        }
         System.out.println("E-mail do autor: " );
         System.out.println("CEP de residência do autor: " );
         System.out.println("Estado de residência do autor: " );
