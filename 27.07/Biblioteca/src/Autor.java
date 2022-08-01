@@ -1,4 +1,3 @@
-package Vetores_e_Encapsulamento;
 import java.util.Scanner;
 
 public class Autor {
