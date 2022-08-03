@@ -39,9 +39,9 @@ public class Principal {
                 } else {
                     if (x == 3) {
                         System.out.println("Digite o nome do fabricante que deseja consultar os produtos:");
-                        nomeComparacao = inserir.nextLine();
+                        nomeComparacao = inserir.next();
                         for (i = 0; i < carrinho1.quantProdutos; i++) {
-                            if (carrinho1.produto[i].fab.getNome() == nomeComparacao) {
+                            if (carrinho1.produto[i].fab.getNome().equalsIgnoreCase(nomeComparacao)) {
                                 carrinho1.produto[i].showProduto();
                             }
                         }
