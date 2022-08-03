@@ -27,8 +27,8 @@ public class Carrinho {
 
     public double getTotal() {
         for (i = 0; i < quantProdutos; i++) {
-            total = +produto[i].getTotalPreco();
+            total =+ produto[i].preco * produto[i].quant;
         }
-        return this.total;
+        return total;
     }
 }
