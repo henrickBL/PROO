@@ -57,5 +57,6 @@ public class Principal {
                 x = false;
             }
         }
+        inserir.close();
     }
 }
