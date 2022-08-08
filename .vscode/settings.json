@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
+        "atividade_teste/ContatosAgenda/src",
         "27.07/VetoresEncapsulamento",
         "27.07/Biblioteca/src",
         "13.07/Livro/Livro/src",
-        "atividade_teste/ContatosAgenda/src"
+        "codMarcela/desafioVetores/src"
     ]
 }
