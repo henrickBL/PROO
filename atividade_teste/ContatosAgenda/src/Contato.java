@@ -15,16 +15,16 @@ public class Contato {
         System.out.println("========== Cadastrar contato ==========");
         System.out.println("----------- Insira os dados -----------");
         System.out.println("Nome:");
-        nome = inserir.nextLine();
+        nome = inserir.next();
         System.out.println(" ");
         System.out.println("Apelido:");
-        apelido = inserir.nextLine();
+        apelido = inserir.next();
         System.out.println(" ");
         System.out.println("Telefone:");
-        telefone = inserir.nextInt();
+        telefone = inserir.nextDouble();
         System.out.println(" ");
         System.out.println("E-mail:");
-        email = inserir.nextLine();
+        email = inserir.next();
         endereco = new Endereco();
     }
 
@@ -45,11 +45,12 @@ public class Contato {
     }
 
     public void getContato() {
-        System.out.println("========== Dados do contato ==========");
+        System.out.println(" ");
         System.out.println("Nome: " + getNome());
         System.out.println("Apelido: " + getApelido());
         System.out.println("Telefone: " + getTelefone());
         System.out.println("E-mail: " + getEmail());
+        System.out.println(" ");
         endereco.getEndereco();
     }
 }
