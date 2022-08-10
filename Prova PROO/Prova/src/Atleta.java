@@ -19,7 +19,7 @@ public class Atleta {
         return ano;
     }
 
-    public String getNaasc(){
+    public String getNasc(){
         return nasc;
     }
 }

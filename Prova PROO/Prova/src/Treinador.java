@@ -5,4 +5,16 @@ public class Treinador {
     private String nome;
     private String curso;
     private double telefone;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public double getTelefone() {
+        return telefone;
+    }
 }
