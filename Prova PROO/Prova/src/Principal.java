@@ -129,19 +129,26 @@ public class Principal {
                             b = false;
                         }
                     }
-                    if (b) {
-                        System.out.println("Equipe não encontrada!");
-                    }
+                }
+                
+                if (b) {
+                    System.out.println("Equipe não encontrada!");
                 }
             }
 
             if (menu == 5) {
                 // adicionar equipe
+                b = true;
                 for (i = 0; i < quantEquipes; i++) {
                     if (equipe[i] == null) {
                         equipe[i] = new Equipe();
+                        b = false;
                         break;
                     }
+                }
+
+                if (b) {
+                    System.out.println("Número máximo de equipes alcançado!");
                 }
             }
 
