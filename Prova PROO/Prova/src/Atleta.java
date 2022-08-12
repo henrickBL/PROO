@@ -23,4 +23,16 @@ public class Atleta {
     public String getNome(){
         return nome;
     }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public String getNasc() {
+        return nasc;
+    }
 }

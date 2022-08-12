@@ -33,4 +33,12 @@ public class Treinador {
     public String getNome() {
         return nome;
     }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public double getTelefone() {
+        return telefone;
+    }
 }
