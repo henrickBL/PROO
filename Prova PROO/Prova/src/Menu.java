@@ -19,18 +19,21 @@ public class Menu {
         for (i = 0; i < quantEquipes; i++) {
             equipe = new Equipe[i];
         }
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
 
         while (x) {
             System.out.println(" ");
             System.out.println("-------=======[ JOGOS INTERNOS ]=======-------");
             System.out.println(" ");
-            System.out.println("1 ------------------------ Adicionar pontuação");
-            System.out.println("2 ---------------------------- Mudar treinador");
+            System.out.println("1 --------------------------- Adicionar equipe");
+            System.out.println("2 ----------------------------- Remover equipe");
             System.out.println("3 --------------------------- Adicionar atleta");
             System.out.println("4 ----------------------------- Remover atleta");
-            System.out.println("5 --------------------------- Adicionar equipe");
-            System.out.println("6 ----------------------------- Remover equipe");
+            System.out.println("5 ------------------------ Adicionar pontuação");
+            System.out.println("6 ---------------------------- Mudar treinador");
             System.out.println("7 ------- Finalizar jogos (mostrar resultados)");
+            System.out.println(" ");
             menu = inserir.nextInt();
             while (menu != 1 && menu != 2 && menu != 3 && menu != 4 && menu != 5 && menu != 6 && menu != 7) {
                 System.out.println(" ");
@@ -39,13 +42,13 @@ public class Menu {
             }
 
             if (menu == 1) {
-                // adicionar pontuação
-                adicionarPontuacao();
+                // adicionar equipe
+                adicionarEquipe();
             }
 
             if (menu == 2) {
-                // mudar treinador
-                mudarTreinador();
+                // remover equipe
+                removerEquipe();
             }
 
             if (menu == 3) {
@@ -59,13 +62,13 @@ public class Menu {
             }
 
             if (menu == 5) {
-                // adicionar equipe
-                adicionarEquipe();
+                // adicionar pontuação
+                adicionarPontuacao();
             }
 
             if (menu == 6) {
-                // remover equipe
-                removerEquipe();
+                // mudar treinador
+                mudarTreinador();
             }
 
             if (menu == 7) {
@@ -188,6 +191,7 @@ public class Menu {
                     equipe[i] = null;
                     System.out.println("Equipe removida com sucesso!");
                     b = false;
+                    break;
                 }
             }
         }
