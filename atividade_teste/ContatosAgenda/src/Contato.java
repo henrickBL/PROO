@@ -8,7 +8,7 @@ public class Contato {
     private String email;
     private Endereco endereco;
 
-    Contato(){
+    Contato() {
         // Limpando a tela
         System.out.print("\033[H\033[2J");
         System.out.flush();

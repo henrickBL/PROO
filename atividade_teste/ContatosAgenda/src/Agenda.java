@@ -7,12 +7,12 @@ public class Agenda {
     private Contato[] contato;
     boolean y = true;
 
-    public Agenda(){
+    public Agenda() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
         System.out.println("Defina o tamanho da agenda (quantidade de contatos):");
         tamanho = inserir.nextInt();
-        for(i = 0; i < tamanho; i++){
+        for (i = 0; i < tamanho; i++) {
             contato = new Contato[i];
         }
     }
@@ -31,7 +31,7 @@ public class Agenda {
         }
     }
 
-    public void exibirContatos(){
+    public void exibirContatos() {
         for (int i = 0; i < getTamanho(); i++) {
             if (contato[i] != null) {
                 contato[i].getContato();
@@ -39,7 +39,7 @@ public class Agenda {
         }
     }
 
-    public void procurarContato(){
+    public void procurarContato() {
         System.out.println(" ");
         System.out.println("Digite o nome do contato:");
         String busca = inserir.next();
@@ -57,7 +57,7 @@ public class Agenda {
             }
         }
 
-        if(y){
+        if (y) {
             System.out.println(" ");
             System.out.print("\033[H\033[2J");
             System.out.flush();
@@ -66,7 +66,7 @@ public class Agenda {
         y = true;
     }
 
-    public void excluirContato(){
+    public void excluirContato() {
         System.out.println(" ");
         System.out.println("Digite o nome do contato que deseja excluir:");
         String busca = inserir.nextLine();
@@ -80,14 +80,14 @@ public class Agenda {
                 break;
             }
         }
-        if(y){
+        if (y) {
             System.out.println(" ");
             System.out.println("Contato não encontrado! :/");
         }
         y = true;
     }
 
-    public void exibirLista(){
+    public void exibirLista() {
         System.out.println(" ");
         System.out.println(" ");
         System.out.print("\033[H\033[2J");
@@ -96,7 +96,7 @@ public class Agenda {
             if (contato[i] != null) {
                 int num = i + 1;
                 System.out.println(num + " - " + contato[i].getNome());
-            }else{
+            } else {
                 break;
             }
         }
