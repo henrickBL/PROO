@@ -121,6 +121,7 @@ public class Menu {
                 if (equipe[i].getNome().equalsIgnoreCase(comparar)) {
                     equipe[i].adicionarAtleta();
                     b = false;
+                    break;
                 }
             }
         }
@@ -157,6 +158,7 @@ public class Menu {
                         }
                     }
                     b = false;
+                    break;
                 }
             }
         }
