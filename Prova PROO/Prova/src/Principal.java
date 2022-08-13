@@ -3,15 +3,15 @@ public class Principal {
         Menu menu = new Menu();
 
         /*
-
-        Prova realizada em dupla
-
-        Alunos:
-            José Henrique Barbosa Lima
-            Samuel Cavalcante da Silva
-
-        Turma: 922
-        
-        */
+         * 
+         * Prova realizada em dupla
+         * 
+         * Alunos:
+         * José Henrique Barbosa Lima
+         * Samuel Cavalcante da Silva
+         * 
+         * Turma: 922
+         * 
+         */
     }
 }

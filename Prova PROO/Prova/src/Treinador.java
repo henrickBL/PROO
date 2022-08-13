@@ -56,7 +56,7 @@ public class Treinador {
         if (curso == 2) {
             nomeCurso = "Eletroeletrônica";
         }
-        
+
         System.out.println(" ");
         System.out.println("Digite o telefone do novo treinador:");
         this.telefone = inserir.nextDouble();

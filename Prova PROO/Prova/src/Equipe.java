@@ -15,7 +15,7 @@ public class Equipe {
     String volei = "Vôlei";
     String basquete = "Basquete";
 
-    public Equipe(){
+    public Equipe() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
         System.out.println("Digite o nome da equipe:");
@@ -23,7 +23,7 @@ public class Equipe {
         System.out.println(" ");
         System.out.println("Digite a quantidade de atletas na equipe:");
         quantAtletas = inserir.nextInt();
-        for(i = 0; i <= quantAtletas; i++){
+        for (i = 0; i <= quantAtletas; i++) {
             atleta = new Atleta[i];
         }
         System.out.println(" ");
@@ -53,7 +53,7 @@ public class Equipe {
     public void adicionarAtleta() {
         i = getAtletasCadastrados();
         atleta[i] = new Atleta();
-        atletasCadastrados ++;
+        atletasCadastrados++;
     }
 
     public int getQuantAtletas() {
@@ -68,11 +68,11 @@ public class Equipe {
         return nome;
     }
 
-    public String getEsporte(){
+    public String getEsporte() {
         return nomeEsporte;
     }
 
-    public double getPontuacao(){
+    public double getPontuacao() {
         return pontuacao;
     }
 
@@ -96,7 +96,7 @@ public class Equipe {
                 System.out.println("Ano escolar: " + atleta[i].getAno());
                 System.out.println("Data de nascimento: " + atleta[i].getNascDia() + "/" + atleta[i].getNascMes() + "/" + atleta[i].getNascAno());
                 System.out.println(" ");
-            }else{
+            } else {
                 break;
             }
         }

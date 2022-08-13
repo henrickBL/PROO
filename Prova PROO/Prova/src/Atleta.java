@@ -12,7 +12,7 @@ public class Atleta {
     String informatica = "Informática";
     String eletroeletronica = "Eletroeletrônica";
 
-    public Atleta(){
+    public Atleta() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
         System.out.println("Digite o nome do atleta:");
@@ -46,7 +46,7 @@ public class Atleta {
         nascAno = inserir.next();
     }
 
-    public String getNome(){
+    public String getNome() {
         return nome;
     }
 
