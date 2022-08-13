@@ -63,56 +63,34 @@ public class Equipe {
         atletasCadastrados++;
     }
 
-
-
-
     public int getQuantAtletas() {
         return quantAtletas;
     }
-
-
 
 
     public int getAtletasCadastrados() {
         return atletasCadastrados;
     }
 
-
-
     public void setAtletasCadastrados() {
         atletasCadastrados --;
     }
-
-
-
 
     public String getNome() {
         return nome;
     }
 
-
-
-
     public String getEsporte() {
         return nomeEsporte;
     }
-
-
-
 
     public double getPontuacao() {
         return pontuacao;
     }
 
-
-
-
     public void setPontuacao(double x) {
         this.pontuacao = pontuacao + x;
     }
-
-
-
 
     public void exibirEquipe() {
         System.out.println(" ");
