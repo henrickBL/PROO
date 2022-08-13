@@ -2,18 +2,18 @@ import java.util.Scanner;
 
 public class Equipe {
     Scanner inserir = new Scanner(System.in);
+    Atleta[] atleta;
+    Treinador treinador;
+    String futebol = "Futebol";
+    String volei = "Vôlei";
+    String basquete = "Basquete";
     private String nome;
     private int esporte;
     private String nomeEsporte;
     private double pontuacao;
-    Atleta[] atleta;
-    Treinador treinador;
     private int quantAtletas;
     private int atletasCadastrados = 0;
     private int i;
-    String futebol = "Futebol";
-    String volei = "Vôlei";
-    String basquete = "Basquete";
 
     public Equipe() {
         System.out.print("\033[H\033[2J");
@@ -50,35 +50,69 @@ public class Equipe {
         treinador = new Treinador();
     }
 
+
+
+
     public void adicionarAtleta() {
-        i = getAtletasCadastrados();
-        atleta[i] = new Atleta();
+        for (i = 0; i < quantAtletas; i++) {
+            if (atleta[i] == null) {
+                atleta[i] = new Atleta();
+                break;
+            }
+        }
         atletasCadastrados++;
     }
+
+
+
 
     public int getQuantAtletas() {
         return quantAtletas;
     }
 
+
+
+
     public int getAtletasCadastrados() {
         return atletasCadastrados;
     }
+
+
+
+    public void setAtletasCadastrados() {
+        atletasCadastrados --;
+    }
+
+
+
 
     public String getNome() {
         return nome;
     }
 
+
+
+
     public String getEsporte() {
         return nomeEsporte;
     }
+
+
+
 
     public double getPontuacao() {
         return pontuacao;
     }
 
+
+
+
     public void setPontuacao(double x) {
         this.pontuacao = pontuacao + x;
     }
+
+
+
 
     public void exibirEquipe() {
         System.out.println(" ");
@@ -96,7 +130,7 @@ public class Equipe {
                 System.out.println(" ");
                 System.out.println("Nome: " + atleta[i].getNome());
                 System.out.println("Curso: " + atleta[i].getCurso());
-                System.out.println("Ano escolar: " + atleta[i].getAno());
+                System.out.println("Ano escolar: " + atleta[i].getAno() + "°");
                 System.out.println("Data de nascimento: " + atleta[i].getNascDia() + "/" + atleta[i].getNascMes() + "/" + atleta[i].getNascAno());
                 System.out.println(" ");
             } else {

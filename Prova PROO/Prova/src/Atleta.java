@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Atleta {
     Scanner inserir = new Scanner(System.in);
+    String informatica = "Informática";
+    String eletroeletronica = "Eletroeletrônica";
     private String nome;
     private int curso;
     private String nomeCurso;
@@ -9,8 +11,6 @@ public class Atleta {
     private String nascDia;
     private String nascMes;
     private String nascAno;
-    String informatica = "Informática";
-    String eletroeletronica = "Eletroeletrônica";
 
     public Atleta() {
         System.out.print("\033[H\033[2J");
@@ -18,7 +18,7 @@ public class Atleta {
         System.out.println("Digite o nome do atleta:");
         nome = inserir.next();
         System.out.println(" ");
-        System.out.println("Digite o curso do atleta (Informática ou Eletroeletrônica):");
+        System.out.println("Digite o curso do atleta:");
         System.out.println(" ");
         System.out.println("1 --------------- Informática");
         System.out.println("2 ---------- Eletroeletrônica");
@@ -34,8 +34,12 @@ public class Atleta {
             nomeCurso = "Eletroeletrônica";
         }
         System.out.println(" ");
-        System.out.println("Digite o ano escolar do atleta:");
+        System.out.println("Digite o ano escolar do atleta (1, 2 ou 3):");
         ano = inserir.nextInt();
+        while (ano != 1 && ano != 2 && ano != 3) {
+            System.out.println("Ano inválido, digite novamente!");
+            ano = inserir.nextInt();
+        }
         System.out.println(" ");
         System.out.println("Digite a data de nascimento do atleta:");
         System.out.println("Dia:");
@@ -46,25 +50,43 @@ public class Atleta {
         nascAno = inserir.next();
     }
 
+
+
+
     public String getNome() {
         return nome;
     }
+
+
+
 
     public String getCurso() {
         return nomeCurso;
     }
 
+
+
+
     public int getAno() {
         return ano;
     }
+
+
+
 
     public String getNascDia() {
         return nascDia;
     }
 
+
+
+
     public String getNascMes() {
         return nascMes;
     }
+
+
+    
 
     public String getNascAno() {
         return nascAno;

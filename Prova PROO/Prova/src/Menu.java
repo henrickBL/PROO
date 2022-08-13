@@ -5,6 +5,7 @@ public class Menu {
     boolean x = true;
     boolean b = true;
     int menu = 0;
+    int a;
     int i;
     int j;
     int equipesCadastradas = 0;
@@ -43,7 +44,8 @@ public class Menu {
             menu = inserir.nextInt();
 
             // estrutura para prevenir erros
-            while (menu != 1 && menu != 2 && menu != 3 && menu != 4 && menu != 5 && menu != 6 && menu != 7 && menu != 8) {
+            while (menu != 1 && menu != 2 && menu != 3 && menu != 4 && menu != 5 && menu != 6 && menu != 7
+                    && menu != 8) {
                 System.out.println(" ");
                 System.out.println("Opção inexistente, digite novamente:");
                 menu = inserir.nextInt();
@@ -121,15 +123,6 @@ public class Menu {
         }
     }
 
-
-
-
-
-
-
-
-
-
     // 1 - Adicionar equipe
     public void adicionarEquipe() {
         b = true;
@@ -145,15 +138,6 @@ public class Menu {
             System.out.println("Número máximo de equipes alcançado!");
         }
     }
-
-
-
-
-
-
-
-
-
 
     // 2 - Remover equipe
     public void removerEquipe() {
@@ -172,15 +156,6 @@ public class Menu {
         num = comparar1 - 1;
         equipe[num] = null;
     }
-
-
-
-
-
-
-
-
-
 
     // 3 - Adicionar atleta
     public void adicionarAtleta() {
@@ -204,15 +179,6 @@ public class Menu {
         }
     }
 
-
-
-
-
-
-
-
-
-
     // 4 - Remover atleta
     public void removerAtleta() {
         System.out.print("\033[H\033[2J");
@@ -231,9 +197,11 @@ public class Menu {
 
         if (equipe[num].getAtletasCadastrados() > 0) {
             System.out.println("Selecione o atleta que deseja remover:");
-            for (i = 0; i <= equipe[num].getAtletasCadastrados(); i++) {
-                num1 = i - 1;
-                System.out.println(num1 + " - " + equipe[num].atleta[i].getNome());
+            for (i = 0; i < equipe[num].getAtletasCadastrados(); i++) {
+                if (equipe[num].atleta[i] != null) {
+                    num1 = i + 1;
+                    System.out.println(num1 + " - " + equipe[num].atleta[i].getNome());
+                }
             }
             comparar1 = inserir.nextInt();
             while (comparar1 < 1 && comparar1 > equipe[i].getAtletasCadastrados()) {
@@ -242,19 +210,20 @@ public class Menu {
             }
             num1 = comparar1 - 1;
             equipe[num].atleta[num1] = null;
+            int num2 = num1 + 1;
+            for (i = num2; i < equipe[num].getAtletasCadastrados(); i++) {
+                if (equipe[num].atleta[i] != null) {
+                    equipe[num].atleta[i - 1] = equipe[num].atleta[i];
+                }
+            }
+            a = equipe[num].getAtletasCadastrados() - 1;
+            equipe[num].atleta[a] = null;
+            System.out.println("Atleta removido com sucesso!");
+            equipe[num].setAtletasCadastrados();
         } else {
             System.out.println("Nenhum atleta cadastrado!");
         }
     }
-
-
-
-
-
-
-
-
-
 
     // 5 - Adicionar pontuação
     public void adicionarPontuacao() {
@@ -278,15 +247,6 @@ public class Menu {
         System.out.println("Pontos adicionados com sucesso!");
     }
 
-
-
-
-
-
-
-
-
-
     // 6 - Mudar treinador
     public void mudarTreinador() {
         System.out.print("\033[H\033[2J");
@@ -305,15 +265,6 @@ public class Menu {
         equipe[num].treinador.setTreinador();
     }
 
-
-
-
-
-
-
-
-
-
     // 7 - Mudar treinador
     public void exibirEquipe() {
         System.out.print("\033[H\033[2J");
@@ -331,15 +282,6 @@ public class Menu {
         num = comparar1 - 1;
         equipe[num].exibirEquipe();
     }
-
-
-
-
-    
-
-
-
-
 
     // 8 - Finalizar jogos
     public void finalizarJogos() {

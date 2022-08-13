@@ -2,12 +2,12 @@ import java.util.Scanner;
 
 public class Treinador {
     Scanner inserir = new Scanner(System.in);
+    String informatica = "Informática";
+    String eletroeletronica = "Eletroeletrônica";
     private String nome;
     private int curso;
     private String nomeCurso;
-    private double telefone;
-    String informatica = "Informática";
-    String eletroeletronica = "Eletroeletrônica";
+    private String telefone;
 
     public Treinador() {
         System.out.println(" ");
@@ -32,8 +32,16 @@ public class Treinador {
 
         System.out.println(" ");
         System.out.println("Digite o telefone do treinador:");
-        telefone = inserir.nextDouble();
+        telefone = inserir.next();
     }
+
+
+
+
+
+
+
+
 
     public void setTreinador() {
         System.out.print("\033[H\033[2J");
@@ -41,6 +49,7 @@ public class Treinador {
         System.out.println("-------=======[ ALTERAR TREINADOR ]=======-------");
         System.out.println("DIgite o nome do novo treinador:");
         this.nome = inserir.next();
+        System.out.println(" ");
         System.out.println("Escolha o curso do novo treinador:");
         System.out.println(" ");
         System.out.println("1 --------------- Informática");
@@ -59,21 +68,30 @@ public class Treinador {
 
         System.out.println(" ");
         System.out.println("Digite o telefone do novo treinador:");
-        this.telefone = inserir.nextDouble();
+        this.telefone = inserir.next();
         System.out.print("\033[H\033[2J");
         System.out.flush();
         System.out.println("Treinador alterado com sucesso!");
     }
 
+
+
+
     public String getNome() {
         return nome;
     }
+
+
+
 
     public String getCurso() {
         return nomeCurso;
     }
 
-    public double getTelefone() {
+
+    
+
+    public String getTelefone() {
         return telefone;
     }
 }
