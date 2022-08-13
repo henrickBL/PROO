@@ -10,8 +10,10 @@ public class Treinador {
     String eletroeletronica = "Eletroeletrônica";
 
     public Treinador() {
+        System.out.println(" ");
         System.out.println("Digite o nome do treinador:");
         nome = inserir.next();
+        System.out.println(" ");
         System.out.println("Escolha o curso do treinador:");
         System.out.println(" ");
         System.out.println("1 --------------- Informática");
@@ -45,7 +47,7 @@ public class Treinador {
         System.out.println("2 ---------- Eletroeletrônica");
         curso = inserir.nextInt();
         while (curso != 1 && curso != 2) {
-            System.out.println("Curso inválido, digite novamente!");
+            System.out.println("Opção inválida, digite novamente!");
             curso = inserir.nextInt();
         }
         if (curso == 1) {

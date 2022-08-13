@@ -3,11 +3,13 @@ import java.util.Scanner;
 public class Equipe {
     Scanner inserir = new Scanner(System.in);
     private String nome;
-    private String esporte;
+    private int esporte;
+    private String nomeEsporte;
     private double pontuacao;
     Atleta[] atleta;
     Treinador treinador;
     private int quantAtletas;
+    private int atletasCadastrados = 0;
     private int i;
     String futebol = "Futebol";
     String volei = "Vôlei";
@@ -18,33 +20,48 @@ public class Equipe {
         System.out.flush();
         System.out.println("Digite o nome da equipe:");
         nome = inserir.next();
+        System.out.println(" ");
         System.out.println("Digite a quantidade de atletas na equipe:");
         quantAtletas = inserir.nextInt();
-        for(i = 0; i < quantAtletas; i++){
+        for(i = 0; i <= quantAtletas; i++){
             atleta = new Atleta[i];
         }
-        System.out.println("Digite o esporte que a equipe vai participar (Apenas futebol, vôlei e basquete são aceitos):");
-        esporte = inserir.next();
-        if ((esporte.equalsIgnoreCase(futebol)) == false && (esporte.equalsIgnoreCase(volei)) == false && (esporte.equalsIgnoreCase(basquete)) == false) {
+        System.out.println(" ");
+        System.out.println("Digite o esporte que a equipe vai participar:");
+        System.out.println(" ");
+        System.out.println("1 ------------------- Futebol");
+        System.out.println("2 --------------------- Vôlei");
+        System.out.println("3 ------------------ Basquete");
+        esporte = inserir.nextInt();
+        while (esporte != 1 && esporte != 2 && esporte != 3) {
             System.out.println(" ");
-            System.out.println("Esporte inválido, tente novamente!");
-            System.out.println(" ");
-            esporte = inserir.next();
+            System.out.println("Opção inválida, digite novamente!");
+            esporte = inserir.nextInt();
+        }
+        if (esporte == 1) {
+            nomeEsporte = "Futebol";
+        }
+        if (esporte == 2) {
+            nomeEsporte = "Vôlei";
+        }
+        if (esporte == 3) {
+            nomeEsporte = "Basquete";
         }
         treinador = new Treinador();
     }
 
     public void adicionarAtleta() {
-        for (i = 0; i < quantAtletas; i++) {
-            if (atleta[i] == null) {
-                atleta[i] = new Atleta();
-                break;
-            }
-        }
+        i = getAtletasCadastrados();
+        atleta[i] = new Atleta();
+        atletasCadastrados ++;
     }
 
     public int getQuantAtletas() {
         return quantAtletas;
+    }
+
+    public int getAtletasCadastrados() {
+        return atletasCadastrados;
     }
 
     public String getNome() {
@@ -52,11 +69,11 @@ public class Equipe {
     }
 
     public String getEsporte(){
-        return this.esporte;
+        return nomeEsporte;
     }
 
     public double getPontuacao(){
-        return this.pontuacao;
+        return pontuacao;
     }
 
     public void setPontuacao(double x) {
@@ -71,13 +88,13 @@ public class Equipe {
         System.out.println(" ");
         System.out.println(" ");
         System.out.println("Atletas:");
-        for (i = 0; i < quantAtletas; i++) {
+        for (i = 0; i < getAtletasCadastrados(); i++) {
             if (atleta[i] != null) {
                 System.out.println(" ");
                 System.out.println("Nome: " + atleta[i].getNome());
                 System.out.println("Curso: " + atleta[i].getCurso());
                 System.out.println("Ano escolar: " + atleta[i].getAno());
-                System.out.println("Data de nascimento: " + atleta[i].getNasc());
+                System.out.println("Data de nascimento: " + atleta[i].getNascDia() + "/" + atleta[i].getNascMes() + "/" + atleta[i].getNascAno());
                 System.out.println(" ");
             }else{
                 break;
