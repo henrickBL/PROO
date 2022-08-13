@@ -62,4 +62,26 @@ public class Equipe {
     public void setPontuacao(double x) {
         this.pontuacao = pontuacao + x;
     }
+
+    public void exibirEquipe() {
+        System.out.println(" ");
+        System.out.println("Treinador: " + treinador.getNome());
+        System.out.println("Curso do treinador: " + treinador.getCurso());
+        System.out.println("Telefone do treinador: " + treinador.getTelefone());
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println("Atletas:");
+        for (i = 0; i < quantAtletas; i++) {
+            if (atleta[i] != null) {
+                System.out.println(" ");
+                System.out.println("Nome: " + atleta[i].getNome());
+                System.out.println("Curso: " + atleta[i].getCurso());
+                System.out.println("Ano escolar: " + atleta[i].getAno());
+                System.out.println("Data de nascimento: " + atleta[i].getNasc());
+                System.out.println(" ");
+            }else{
+                break;
+            }
+        }
+    }
 }

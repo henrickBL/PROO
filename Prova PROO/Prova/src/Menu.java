@@ -26,7 +26,6 @@ public class Menu {
         System.out.flush();
 
         while (x) {
-            System.out.println(" ");
             System.out.println("-------=======[ JOGOS INTERNOS ]=======-------");
             System.out.println(" ");
             System.out.println("1 --------------------------- Adicionar equipe");
@@ -35,10 +34,12 @@ public class Menu {
             System.out.println("4 ----------------------------- Remover atleta");
             System.out.println("5 ------------------------ Adicionar pontuação");
             System.out.println("6 ---------------------------- Mudar treinador");
-            System.out.println("7 ------- Finalizar jogos (mostrar resultados)");
+            System.out.println("7 -------------- Exibir equipe (insira o nome)");
+            System.out.println("8 ------- Finalizar jogos (mostrar resultados)");
             System.out.println(" ");
             menu = inserir.nextInt();
-            while (menu != 1 && menu != 2 && menu != 3 && menu != 4 && menu != 5 && menu != 6 && menu != 7) {
+            while (menu != 1 && menu != 2 && menu != 3 && menu != 4 && menu != 5 && menu != 6 && menu != 7
+                    && menu != 8) {
                 System.out.println(" ");
                 System.out.println("Opção inexistente, digite novamente:");
                 menu = inserir.nextInt();
@@ -101,6 +102,15 @@ public class Menu {
             }
 
             if (menu == 7) {
+                // exibir equipe (insira o nome)
+                if (equipes > 0) {
+                    exibirEquipe();
+                } else {
+                    System.out.println("Nenhuma equipe cadastrada!");
+                }
+            }
+
+            if (menu == 8) {
                 // finalizar jogos (mostrar resultados de todos os esportes) / sair
                 finalizarJogos();
             }
@@ -108,6 +118,8 @@ public class Menu {
     }
 
     public void adicionarPontuacao() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         System.out.println("Digite o nome da equipe que deseja adicionar pontos:");
         comparar = inserir.next();
         for (i = 0; i < quantEquipes; i++) {
@@ -123,6 +135,8 @@ public class Menu {
     }
 
     public void mudarTreinador() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         System.out.println("Digite o nome da equipe que deseja substituir o treinador:");
         comparar = inserir.next();
         for (i = 0; i < quantEquipes; i++) {
@@ -142,6 +156,8 @@ public class Menu {
     }
 
     public void adicionarAtleta() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         System.out.println("Digite o nome da equipe que deseja adicionar atleta:");
         comparar = inserir.next();
         for (i = 0; i < quantEquipes; i++) {
@@ -152,7 +168,7 @@ public class Menu {
                     if (i <= quantAtletas) {
                         equipe[i].adicionarAtleta();
                         break;
-                    }else{
+                    } else {
                         System.out.println("Limite de atletas atingido!");
                     }
 
@@ -167,6 +183,8 @@ public class Menu {
     }
 
     public void removerAtleta() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         System.out.println("Digite o nome da equipe que o atleta pertence:");
         comparar = inserir.next();
         for (i = 0; i < quantEquipes; i++) {
@@ -219,6 +237,8 @@ public class Menu {
     }
 
     public void removerEquipe() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         System.out.println("Digite o nome da equipe que deseja remover:");
         comparar = inserir.next();
         for (i = 0; i < quantEquipes; i++) {
@@ -238,6 +258,27 @@ public class Menu {
         }
     }
 
+    public void exibirEquipe() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+        System.out.println("Digite o nome da equipe que deseja exibir:");
+        comparar = inserir.next();
+        for (i = 0; i < quantEquipes; i++) {
+            b = true;
+            if (equipe[i] != null) {
+                if (equipe[i].getNome().equalsIgnoreCase(comparar)) {
+                    equipe[i].exibirEquipe();
+                    b = false;
+                    break;
+                }
+            }
+        }
+
+        if (b) {
+            System.out.println("Equipe não encontrada!");
+        }
+    }
+
     public void finalizarJogos() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -246,7 +287,7 @@ public class Menu {
         for (i = 0; i < quantEquipes; i++) {
             if (equipe[i] == null) {
                 break;
-            }else{
+            } else {
                 System.out.println(" ");
                 System.out.println("Equipe: " + equipe[i].getNome());
                 System.out.println("Esporte: " + equipe[i].getEsporte());
@@ -254,6 +295,7 @@ public class Menu {
                 System.out.println(" ");
             }
         }
+        System.out.println(" ");
         x = false;
     }
 }
