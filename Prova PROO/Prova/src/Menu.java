@@ -121,10 +121,45 @@ public class Menu {
         }
     }
 
-    public void adicionarPontuacao() {
+
+
+
+
+
+
+
+
+
+    // 1 - Adicionar equipe
+    public void adicionarEquipe() {
+        b = true;
+        for (i = 0; i <= quantEquipes; i++) {
+            if (equipe[i] == null) {
+                equipe[i] = new Equipe();
+                b = false;
+                break;
+            }
+        }
+
+        if (b) {
+            System.out.println("Número máximo de equipes alcançado!");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    // 2 - Remover equipe
+    public void removerEquipe() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("Escolha a equipe a adicionar pontos:");
+        System.out.println("Escolha a equipe que deseja remover:");
         for (i = 0; i < equipesCadastradas; i++) {
             num = i + 1;
             System.out.println(num + " - " + equipe[i].getNome());
@@ -135,30 +170,19 @@ public class Menu {
             comparar1 = inserir.nextInt();
         }
         num = comparar1 - 1;
-
-        System.out.println("Digite a quantidade de pontos a ser adicionados na equipe:");
-        pontos = inserir.nextDouble();
-        equipe[num].setPontuacao(pontos);
-        System.out.println("Pontos adicionados com sucesso!");
+        equipe[num] = null;
     }
 
-    public void mudarTreinador() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-        System.out.println("Escolha a equipe que deseja mudar o treinador:");
-        for (i = 0; i < equipesCadastradas; i++) {
-            num = i + 1;
-            System.out.println(num + " - " + equipe[i].getNome());
-        }
-        comparar1 = inserir.nextInt();
-        while (comparar1 < 1 && comparar1 > equipesCadastradas) {
-            System.out.println("Opção inválida, digite novamente!");
-            comparar1 = inserir.nextInt();
-        }
-        num = comparar1 - 1;
-        equipe[num].treinador.setTreinador();
-    }
 
+
+
+
+
+
+
+
+
+    // 3 - Adicionar atleta
     public void adicionarAtleta() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -180,6 +204,16 @@ public class Menu {
         }
     }
 
+
+
+
+
+
+
+
+
+
+    // 4 - Remover atleta
     public void removerAtleta() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -213,25 +247,20 @@ public class Menu {
         }
     }
 
-    public void adicionarEquipe() {
-        b = true;
-        for (i = 0; i <= quantEquipes; i++) {
-            if (equipe[i] == null) {
-                equipe[i] = new Equipe();
-                b = false;
-                break;
-            }
-        }
 
-        if (b) {
-            System.out.println("Número máximo de equipes alcançado!");
-        }
-    }
 
-    public void removerEquipe() {
+
+
+
+
+
+
+
+    // 5 - Adicionar pontuação
+    public void adicionarPontuacao() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("Escolha a equipe que deseja remover:");
+        System.out.println("Escolha a equipe a adicionar pontos:");
         for (i = 0; i < equipesCadastradas; i++) {
             num = i + 1;
             System.out.println(num + " - " + equipe[i].getNome());
@@ -242,9 +271,50 @@ public class Menu {
             comparar1 = inserir.nextInt();
         }
         num = comparar1 - 1;
-        equipe[num] = null;
+
+        System.out.println("Digite a quantidade de pontos a ser adicionados na equipe:");
+        pontos = inserir.nextDouble();
+        equipe[num].setPontuacao(pontos);
+        System.out.println("Pontos adicionados com sucesso!");
     }
 
+
+
+
+
+
+
+
+
+
+    // 6 - Mudar treinador
+    public void mudarTreinador() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+        System.out.println("Escolha a equipe que deseja mudar o treinador:");
+        for (i = 0; i < equipesCadastradas; i++) {
+            num = i + 1;
+            System.out.println(num + " - " + equipe[i].getNome());
+        }
+        comparar1 = inserir.nextInt();
+        while (comparar1 < 1 && comparar1 > equipesCadastradas) {
+            System.out.println("Opção inválida, digite novamente!");
+            comparar1 = inserir.nextInt();
+        }
+        num = comparar1 - 1;
+        equipe[num].treinador.setTreinador();
+    }
+
+
+
+
+
+
+
+
+
+
+    // 7 - Mudar treinador
     public void exibirEquipe() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -262,6 +332,16 @@ public class Menu {
         equipe[num].exibirEquipe();
     }
 
+
+
+
+    
+
+
+
+
+
+    // 8 - Finalizar jogos
     public void finalizarJogos() {
         System.out.print("\033[H\033[2J");
         System.out.flush();

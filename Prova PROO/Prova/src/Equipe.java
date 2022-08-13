@@ -82,6 +82,9 @@ public class Equipe {
 
     public void exibirEquipe() {
         System.out.println(" ");
+        System.out.println("Equipe: " + getNome());
+        System.out.println("Esporte: " + getEsporte());
+        System.out.println("Pontuação: " + getPontuacao());
         System.out.println("Treinador: " + treinador.getNome());
         System.out.println("Curso do treinador: " + treinador.getCurso());
         System.out.println("Telefone do treinador: " + treinador.getTelefone());
