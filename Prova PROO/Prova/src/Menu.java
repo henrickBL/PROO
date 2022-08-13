@@ -10,7 +10,10 @@ public class Menu {
     int equipes = 0;
     int quantEquipes;
     int quantAtletas;
+    int num;
+    int num1;
     String comparar;
+    int comparar1;
     double pontos;
     private Equipe[] equipe;
 
@@ -18,7 +21,7 @@ public class Menu {
 
         System.out.println("Digite a quantidade de equipes que participarão dos jogos:");
         quantEquipes = inserir.nextInt();
-        for (i = 0; i < quantEquipes; i++) {
+        for (i = 0; i <= quantEquipes; i++) {
             equipe = new Equipe[i];
         }
 
@@ -34,7 +37,7 @@ public class Menu {
             System.out.println("4 ----------------------------- Remover atleta");
             System.out.println("5 ------------------------ Adicionar pontuação");
             System.out.println("6 ---------------------------- Mudar treinador");
-            System.out.println("7 -------------- Exibir equipe (insira o nome)");
+            System.out.println("7 ------------------------------ Exibir equipe");
             System.out.println("8 ------- Finalizar jogos (mostrar resultados)");
             System.out.println(" ");
             menu = inserir.nextInt();
@@ -120,110 +123,98 @@ public class Menu {
     public void adicionarPontuacao() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("Digite o nome da equipe que deseja adicionar pontos:");
-        comparar = inserir.next();
-        for (i = 0; i < quantEquipes; i++) {
-            if (equipe[i] != null) {
-                if (equipe[i].getNome().equalsIgnoreCase(comparar)) {
-                    System.out.println("Digite quantos pontos quer adicionar:");
-                    pontos = inserir.nextDouble();
-                    equipe[i].setPontuacao(pontos);
-                    break;
-                }
-            }
+        System.out.println("Escolha a equipe a adicionar pontos:");
+        for (i = 0; i < equipes; i++) {
+            num = i + 1;
+            System.out.println(num + " - " + equipe[i].getNome());
         }
+        comparar1 = inserir.nextInt();
+        while (comparar1 < 1 && comparar1 > equipes) {
+            System.out.println("Opção inválida, digite novamente!");
+            comparar1 = inserir.nextInt();
+        }
+        num = comparar1 - 1;
+
+        System.out.println("Digite a quantidade de pontos a ser adicionados na equipe:");
+        pontos = inserir.nextDouble();
+        equipe[num].setPontuacao(pontos);
+        System.out.println("Pontos adicionados com sucesso!");
     }
 
     public void mudarTreinador() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("Digite o nome da equipe que deseja substituir o treinador:");
-        comparar = inserir.next();
-        for (i = 0; i < quantEquipes; i++) {
-            b = true;
-            if (equipe[i] != null) {
-                if (equipe[i].treinador.getNome().equalsIgnoreCase(comparar)) {
-                    equipe[i].treinador.setTreinador();
-                    b = false;
-                    break;
-                }
-            }
+        System.out.println("Escolha a equipe que deseja mudar o treinador:");
+        for (i = 0; i < equipes; i++) {
+            num = i + 1;
+            System.out.println(num + " - " + equipe[i].getNome());
         }
-
-        if (b) {
-            System.out.println("Treinador não encontrado!");
+        comparar1 = inserir.nextInt();
+        while (comparar1 < 1 && comparar1 > equipes) {
+            System.out.println("Opção inválida, digite novamente!");
+            comparar1 = inserir.nextInt();
         }
+        num = comparar1 - 1;
+        equipe[num].treinador.setTreinador();
     }
 
     public void adicionarAtleta() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("Digite o nome da equipe que deseja adicionar atleta:");
-        comparar = inserir.next();
-        for (i = 0; i < quantEquipes; i++) {
-            b = true;
-            if (equipe[i] != null) {
-                if (equipe[i].getNome().equalsIgnoreCase(comparar)) {
-                    quantAtletas = equipe[i].getQuantAtletas();
-                    if (i <= quantAtletas) {
-                        equipe[i].adicionarAtleta();
-                        break;
-                    } else {
-                        System.out.println("Limite de atletas atingido!");
-                    }
-
-                    b = false;
-                }
-            }
+        System.out.println("Escolha a equipe que deseja adicionar o atleta:");
+        for (i = 0; i < equipes; i++) {
+            num = i + 1;
+            System.out.println(num + " - " + equipe[i].getNome());
         }
-
-        if (b) {
-            System.out.println("Equipe não encontrada!");
+        comparar1 = inserir.nextInt();
+        while (comparar1 < 1 && comparar1 > equipes) {
+            System.out.println("Opção inválida, digite novamente!");
+            comparar1 = inserir.nextInt();
+        }
+        num = comparar1 - 1;
+        if (equipe[num].getAtletasCadastrados() < equipe[num].getQuantAtletas()) {
+            equipe[num].adicionarAtleta();
+        } else {
+            System.out.println("Número máximo de atletas atingido!");
         }
     }
 
     public void removerAtleta() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("Digite o nome da equipe que o atleta pertence:");
-        comparar = inserir.next();
-        for (i = 0; i < quantEquipes; i++) {
-            b = true;
-            if (equipe[i] != null) {
-                if (equipe[i].getNome().equalsIgnoreCase(comparar)) {
-                    quantAtletas = equipe[i].getQuantAtletas();
-                    System.out.println("Digite o nome do atleta:");
-                    comparar = inserir.next();
-                    for (j = 0; j < quantAtletas; j++) {
-                        boolean p = true;
-                        if (equipe[i].atleta[j] != null) {
-                            if (equipe[i].atleta[j].getNome().equalsIgnoreCase(comparar)) {
-                                equipe[i].atleta[j] = null;
-                                System.out.println(" ");
-                                System.out.println("Atleta removido com sucesso!");
-                                System.out.println(" ");
-                                p = false;
-                                break;
-                            }
-                        }
-                        if (p) {
-                            System.out.println("Atleta não encontrado!");
-                        }
-                    }
-                    b = false;
-                    break;
-                }
-            }
+        System.out.println("Escolha a equipe que o atleta participa:");
+        for (i = 0; i < equipes; i++) {
+            num = i + 1;
+            System.out.println(num + " - " + equipe[i].getNome());
         }
+        comparar1 = inserir.nextInt();
+        while (comparar1 < 1 && comparar1 > equipes) {
+            System.out.println("Opção inválida, digite novamente!");
+            comparar1 = inserir.nextInt();
+        }
+        num = comparar1 - 1;
 
-        if (b) {
-            System.out.println("Equipe não encontrada!");
+        if (equipe[num].getAtletasCadastrados() > 0) {
+            System.out.println("Selecione o atleta que deseja remover:");
+            for (i = 0; i <= equipe[num].getAtletasCadastrados(); i++) {
+                num1 = i - 1;
+                System.out.println(num1 + " - " + equipe[num].atleta[i].getNome());
+            }
+            comparar1 = inserir.nextInt();
+            while (comparar1 < 1 && comparar1 > equipe[i].getAtletasCadastrados()) {
+                System.out.println("Opção inválida, digite novamente!");
+                comparar1 = inserir.nextInt();
+            }
+            num1 = comparar1 - 1;
+            equipe[num].atleta[num1] = null;
+        }else{
+            System.out.println("Nenhum atleta cadastrado!");
         }
     }
 
     public void adicionarEquipe() {
         b = true;
-        for (i = 0; i < quantEquipes; i++) {
+        for (i = 0; i <= quantEquipes; i++) {
             if (equipe[i] == null) {
                 equipe[i] = new Equipe();
                 b = false;
@@ -239,44 +230,35 @@ public class Menu {
     public void removerEquipe() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("Digite o nome da equipe que deseja remover:");
-        comparar = inserir.next();
-        for (i = 0; i < quantEquipes; i++) {
-            b = true;
-            if (equipe[i] != null) {
-                if (equipe[i].getNome().equalsIgnoreCase(comparar)) {
-                    equipe[i] = null;
-                    System.out.println("Equipe removida com sucesso!");
-                    b = false;
-                    break;
-                }
-            }
+        System.out.println("Escolha a equipe que deseja remover:");
+        for (i = 0; i < equipes; i++) {
+            num = i + 1;
+            System.out.println(num + " - " + equipe[i].getNome());
         }
-
-        if (b) {
-            System.out.println("Equipe não encontrada!");
+        comparar1 = inserir.nextInt();
+        while (comparar1 < 1 && comparar1 > equipes) {
+            System.out.println("Opção inválida, digite novamente!");
+            comparar1 = inserir.nextInt();
         }
+        num = comparar1 - 1;
+        equipe[num] = null;
     }
 
     public void exibirEquipe() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("Digite o nome da equipe que deseja exibir:");
-        comparar = inserir.next();
-        for (i = 0; i < quantEquipes; i++) {
-            b = true;
-            if (equipe[i] != null) {
-                if (equipe[i].getNome().equalsIgnoreCase(comparar)) {
-                    equipe[i].exibirEquipe();
-                    b = false;
-                    break;
-                }
-            }
+        System.out.println("Escolha a equipe que deseja exibir:");
+        for (i = 0; i < equipes; i++) {
+            num = i + 1;
+            System.out.println(num + " - " + equipe[i].getNome());
         }
-
-        if (b) {
-            System.out.println("Equipe não encontrada!");
+        comparar1 = inserir.nextInt();
+        while (comparar1 < 1 && comparar1 > equipes) {
+            System.out.println("Opção inválida, digite novamente!");
+            comparar1 = inserir.nextInt();
         }
+        num = comparar1 - 1;
+        equipe[num].exibirEquipe();
     }
 
     public void finalizarJogos() {
