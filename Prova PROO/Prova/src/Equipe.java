@@ -48,7 +48,7 @@ public class Equipe {
     }
 
     public String getNome() {
-        return this.nome;
+        return nome;
     }
 
     public String getEsporte(){

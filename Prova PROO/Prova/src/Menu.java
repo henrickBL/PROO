@@ -7,7 +7,9 @@ public class Menu {
     int menu = 0;
     int i;
     int j;
+    int equipes = 0;
     int quantEquipes;
+    int quantAtletas;
     String comparar;
     double pontos;
     private Equipe[] equipe;
@@ -19,6 +21,7 @@ public class Menu {
         for (i = 0; i < quantEquipes; i++) {
             equipe = new Equipe[i];
         }
+
         System.out.print("\033[H\033[2J");
         System.out.flush();
 
@@ -43,32 +46,58 @@ public class Menu {
 
             if (menu == 1) {
                 // adicionar equipe
-                adicionarEquipe();
+                if (equipes < quantEquipes) {
+                    adicionarEquipe();
+                    equipes++;
+                } else {
+                    System.out.println("O número máximo de equipes foi atingido!");
+                }
             }
 
             if (menu == 2) {
                 // remover equipe
-                removerEquipe();
+                if (equipes > 0) {
+                    removerEquipe();
+                    equipes--;
+                } else {
+                    System.out.println("Nenhuma equipe cadastrada!");
+                }
             }
 
             if (menu == 3) {
                 // adicionar atleta
-                adicionarAtleta();
+                if (equipes > 0) {
+                    adicionarAtleta();
+                } else {
+                    System.out.println("Nenhuma equipe cadastrada!");
+                }
             }
 
             if (menu == 4) {
                 // remover atleta
-                removerAtleta();
+                if (equipes > 0) {
+                    removerAtleta();
+                } else {
+                    System.out.println("Nenhum atleta cadastrado!");
+                }
             }
 
             if (menu == 5) {
                 // adicionar pontuação
-                adicionarPontuacao();
+                if (equipes > 0) {
+                    adicionarPontuacao();
+                } else {
+                    System.out.println("Nenhuma equipe cadastrada!");
+                }
             }
 
             if (menu == 6) {
                 // mudar treinador
-                mudarTreinador();
+                if (equipes > 0) {
+                    mudarTreinador();
+                } else {
+                    System.out.println("Nenhuma equipe cadastrada!");
+                }
             }
 
             if (menu == 7) {
@@ -119,9 +148,15 @@ public class Menu {
             b = true;
             if (equipe[i] != null) {
                 if (equipe[i].getNome().equalsIgnoreCase(comparar)) {
-                    equipe[i].adicionarAtleta();
+                    quantAtletas = equipe[i].getQuantAtletas();
+                    if (i <= quantAtletas) {
+                        equipe[i].adicionarAtleta();
+                        break;
+                    }else{
+                        System.out.println("Limite de atletas atingido!");
+                    }
+
                     b = false;
-                    break;
                 }
             }
         }
@@ -138,7 +173,7 @@ public class Menu {
             b = true;
             if (equipe[i] != null) {
                 if (equipe[i].getNome().equalsIgnoreCase(comparar)) {
-                    int quantAtletas = equipe[i].getQuantAtletas();
+                    quantAtletas = equipe[i].getQuantAtletas();
                     System.out.println("Digite o nome do atleta:");
                     comparar = inserir.next();
                     for (j = 0; j < quantAtletas; j++) {
@@ -154,7 +189,7 @@ public class Menu {
                             }
                         }
                         if (p) {
-                            System.out.println("Atleta não encontrada!");
+                            System.out.println("Atleta não encontrado!");
                         }
                     }
                     b = false;
@@ -209,7 +244,9 @@ public class Menu {
         System.out.println("-------=======[ RESULTADOS ]=======-------");
 
         for (i = 0; i < quantEquipes; i++) {
-            if (equipe[i] != null) {
+            if (equipe[i] == null) {
+                break;
+            }else{
                 System.out.println(" ");
                 System.out.println("Equipe: " + equipe[i].getNome());
                 System.out.println("Esporte: " + equipe[i].getEsporte());
