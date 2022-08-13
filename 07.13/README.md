@@ -1,2 +1,2 @@
 # Encapsulamento
-- **public** e **private** para variáveis (encapsulamento de variáveis)
+- **public** e **private** para funções e variáveis (encapsulamento de variáveis)
