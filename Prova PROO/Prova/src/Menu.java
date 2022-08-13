@@ -7,7 +7,6 @@ public class Menu {
     int menu = 0;
     int a;
     int i;
-    int j;
     int equipesCadastradas = 0;
     int quantEquipes;
     int quantAtletas;
