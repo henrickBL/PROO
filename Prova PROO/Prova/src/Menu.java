@@ -7,6 +7,7 @@ public class Menu {
     int menu = 0;
     int a;
     int i;
+    int j;
     int equipesCadastradas = 0;
     int quantEquipes;
     int quantAtletas;
@@ -125,15 +126,12 @@ public class Menu {
     // 1 - Adicionar equipe
     public void adicionarEquipe() {
         b = true;
-        for (i = 0; i <= quantEquipes; i++) {
-            if (equipe[i] == null) {
+        for (i = equipesCadastradas; i <= quantEquipes; i++) {
                 equipe[i] = new Equipe();
-                b = false;
                 break;
-            }
         }
 
-        if (b) {
+        if (equipesCadastradas == quantEquipes) {
             System.out.println("Número máximo de equipes alcançado!");
         }
     }
@@ -154,6 +152,13 @@ public class Menu {
         }
         num = comparar1 - 1;
         equipe[num] = null;
+        int num3 = num + 1;
+        System.out.println("Equipe removida com sucesso!");
+        for (i = num3; i < equipesCadastradas; i++) {
+            if (equipe[i] != null) {
+                equipe[i - 1] = equipe[i];
+            }
+        }
     }
 
     // 3 - Adicionar atleta
