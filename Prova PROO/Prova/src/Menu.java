@@ -16,7 +16,7 @@ public class Menu {
 
     Menu() {
 
-        System.out.println("Digite a quantidade de equipes:");
+        System.out.println("Digite a quantidade de equipes que participarão dos jogos:");
         quantEquipes = inserir.nextInt();
         for (i = 0; i < quantEquipes; i++) {
             equipe = new Equipe[i];
@@ -241,7 +241,7 @@ public class Menu {
     public void finalizarJogos() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
-        System.out.println("-------=======[ RESULTADOS ]=======-------");
+        System.out.println("--------========[ RESULTADOS ]========--------");
 
         for (i = 0; i < quantEquipes; i++) {
             if (equipe[i] == null) {
