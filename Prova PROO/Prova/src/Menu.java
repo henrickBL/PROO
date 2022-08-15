@@ -8,7 +8,7 @@ public class Menu {
     int a;
     int i;
     int j;
-    int equipesCadastradas = 0;
+    int equipesCadastradas;
     int quantEquipes;
     int quantAtletas;
     int num;
@@ -154,7 +154,8 @@ public class Menu {
             System.out.println(num + " - " + equipe[i].getNome());
         }
         comparar1 = inserir.nextInt();
-        while (comparar1 < 1 && comparar1 > equipesCadastradas) {
+        while (comparar1 < 1 || comparar1 > equipesCadastradas) {
+            System.out.println(" ");
             System.out.println("Opção inválida, digite novamente!");
             comparar1 = inserir.nextInt();
         }
@@ -183,7 +184,8 @@ public class Menu {
             System.out.println(num + " - " + equipe[i].getNome());
         }
         comparar1 = inserir.nextInt();
-        while (comparar1 < 1 && comparar1 > equipesCadastradas) {
+        while (comparar1 < 1 || comparar1 > equipesCadastradas) {
+            System.out.println(" ");
             System.out.println("Opção inválida, digite novamente!");
             comparar1 = inserir.nextInt();
         }
@@ -209,7 +211,8 @@ public class Menu {
             System.out.println(num + " - " + equipe[i].getNome());
         }
         comparar1 = inserir.nextInt();
-        while (comparar1 < 1 && comparar1 > equipesCadastradas) {
+        while (comparar1 < 1 || comparar1 > equipesCadastradas) {
+            System.out.println(" ");
             System.out.println("Opção inválida, digite novamente!");
             comparar1 = inserir.nextInt();
         }
@@ -224,7 +227,8 @@ public class Menu {
                 }
             }
             comparar1 = inserir.nextInt();
-            while (comparar1 < 1 && comparar1 > equipe[i].getAtletasCadastrados()) {
+            while (comparar1 < 1 || comparar1 > equipe[num].getAtletasCadastrados()) {
+                System.out.println(" ");
                 System.out.println("Opção inválida, digite novamente!");
                 comparar1 = inserir.nextInt();
             }
@@ -259,7 +263,8 @@ public class Menu {
             System.out.println(num + " - " + equipe[i].getNome());
         }
         comparar1 = inserir.nextInt();
-        while (comparar1 < 1 && comparar1 > equipesCadastradas) {
+        while (comparar1 < 1 || comparar1 > equipesCadastradas) {
+            System.out.println(" ");
             System.out.println("Opção inválida, digite novamente!");
             comparar1 = inserir.nextInt();
         }
@@ -285,7 +290,8 @@ public class Menu {
             System.out.println(num + " - " + equipe[i].getNome());
         }
         comparar1 = inserir.nextInt();
-        while (comparar1 < 1 && comparar1 > equipesCadastradas) {
+        while (comparar1 < 1 || comparar1 > equipesCadastradas) {
+            System.out.println(" ");
             System.out.println("Opção inválida, digite novamente!");
             comparar1 = inserir.nextInt();
         }
@@ -307,7 +313,8 @@ public class Menu {
             System.out.println(num + " - " + equipe[i].getNome());
         }
         comparar1 = inserir.nextInt();
-        while (comparar1 < 1 && comparar1 > equipesCadastradas) {
+        while (comparar1 < 1 || comparar1 > equipesCadastradas) {
+            System.out.println(" ");
             System.out.println("Opção inválida, digite novamente!");
             comparar1 = inserir.nextInt();
         }
