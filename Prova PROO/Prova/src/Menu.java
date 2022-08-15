@@ -123,6 +123,10 @@ public class Menu {
         }
     }
 
+
+
+
+
     // 1 - Adicionar equipe
     public void adicionarEquipe() {
         b = true;
@@ -135,6 +139,10 @@ public class Menu {
             System.out.println("Número máximo de equipes alcançado!");
         }
     }
+
+
+
+
 
     // 2 - Remover equipe
     public void removerEquipe() {
@@ -161,6 +169,10 @@ public class Menu {
         }
     }
 
+
+
+
+
     // 3 - Adicionar atleta
     public void adicionarAtleta() {
         System.out.print("\033[H\033[2J");
@@ -182,6 +194,10 @@ public class Menu {
             System.out.println("Número máximo de atletas atingido!");
         }
     }
+
+
+
+
 
     // 4 - Remover atleta
     public void removerAtleta() {
@@ -229,6 +245,10 @@ public class Menu {
         }
     }
 
+
+
+
+
     // 5 - Adicionar pontuação
     public void adicionarPontuacao() {
         System.out.print("\033[H\033[2J");
@@ -251,6 +271,10 @@ public class Menu {
         System.out.println("Pontos adicionados com sucesso!");
     }
 
+
+
+
+
     // 6 - Mudar treinador
     public void mudarTreinador() {
         System.out.print("\033[H\033[2J");
@@ -269,6 +293,10 @@ public class Menu {
         equipe[num].treinador.setTreinador();
     }
 
+
+
+
+
     // 7 - Exibir equipe
     public void exibirEquipe() {
         System.out.print("\033[H\033[2J");
@@ -286,6 +314,10 @@ public class Menu {
         num = comparar1 - 1;
         equipe[num].exibirEquipe();
     }
+
+
+
+    
 
     // 8 - Finalizar jogos
     public void finalizarJogos() {
