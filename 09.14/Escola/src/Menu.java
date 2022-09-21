@@ -21,54 +21,50 @@ public class Menu {
             System.out.println("4 - Remover turma (informe a turma)");
             System.out.println("5 - Listar alunos por turma (informe a turma)");
             System.out.println("6 - Consultar média de um aluno (informe o número de matrícula do aluno)");
-            System.out.println("7 - Alterar notas de um aluno (informe o número de matrícula do aluno");
-            System.out.println("8 - Exibir média dos alunos de uma turma (informe o código da turma)");
-            System.out.println("9 - Sair");
+            System.out.println("7 - Sair");
 
-            System.out.print("Qual sua opção? ");
+            System.out.print("Escolha a opção:");
             int op = inserir.nextInt();
+            while (op < 1 || op > 7) {
+                System.out.println("Opção inválida! Digite novamente:");
+                op = inserir.nextInt();
+            }
             inserir.nextLine();
 
-            switch (op) {
-                case 1:
-                    addTurma();
-                    System.out.println();
-                    break;
-                case 2:
-                    cadastrarAluno();
-                    System.out.println();
-                    break;
-                case 3:
-                    listarTurmas();
-                    System.out.println();
-                    break;
-                case 4:
-                    removerTurma();
-                    System.out.println();
-                    break;
-                case 5:
-                    listarAlunos();
-                    System.out.println();
-                    break;
-                case 6:
-                    consultarMedia();
-                    System.out.println();
-                    break;
-                case 7:
-                    break;
-                case 8:
-                    break;
-                case 9:
-                    System.out.println("Saindo...");
-                    x = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida! Tente novamente. ");
-                    break;
+            if (op == 1) {
+                addTurma();
+                System.out.println();
             }
 
-        }
+            if (op == 2) {
+                cadastrarAluno();
+                System.out.println();
+            }
 
+            if (op == 3) {
+                listarTurmas();
+                System.out.println();
+            }
+
+            if (op == 4) {
+                removerTurma();
+                System.out.println();
+            }
+            if (op == 5) {
+                listarAlunos();
+                System.out.println();
+            }
+
+            if (op == 6) {
+                consultarMedia();
+                System.out.println(" ");
+            }
+
+            if (op == 7) {
+                System.out.println("Encerrando programa...");
+                x = false;
+            }
+        }
     }
 
     public void addTurma() {
