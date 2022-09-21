@@ -23,17 +23,14 @@ public class Turma {
 
     }
 
-    // método para adicionar alunos na lista de alunos
     public void cadastrarAluno() {
         alunos.add(new Aluno());
     }
 
-    // método para exibir os atributos da turma
     public void exibir() {
         System.out.println("Código: " + codigo);
         System.out.println("Nome da turma: " + nome);
         System.out.println("Quantidade de alunos: " + alunos.size());
-        // imprime a quantidade de alunos na turma
     }
 
     public void exibirAlunos() {
