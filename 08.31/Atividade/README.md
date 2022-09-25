@@ -1,5 +1,7 @@
-1. Crie uma classe chamada Livro.:
+1. Crie uma classe chamada Livro.
+
 Atributos: titulo, autor, geênero, preço.
+
 Meétodos:
     - exibir ( );
 
