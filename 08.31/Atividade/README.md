@@ -1,18 +1,20 @@
-## Getting Started
+1. Crie uma classe chamada Livro.:
+Atributos: titulo, autor, geênero, preço.
+Meétodos:
+    - exibir ( );
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+    - reajustarPreco( ): reajustar o preço do livro de acordo com o valor do reajuste
+    recebido como paraêmetro. Por exemplo: 15%
 
-## Folder Structure
 
-The workspace contains two folders by default, where:
+2. Crie uma classe chamada Loja com o atributo: estoque – que deverá ser um ArrayList para cadastrar os Livros da questaão anterior. Esta classe deveraé ter meétodos para:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+    - adicionar livros exibir a quantidade de livros já é cadastrados;
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+    - imprimir todos os livros;
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+    - remover um livro do cadastro (perguntar o nome);
 
-## Dependency Management
+    - atualizar os dados de um livro (perguntar o titulo);
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+    - reajustar o preco de um livro (perguntar o titulo do livro a ser reajustado).
