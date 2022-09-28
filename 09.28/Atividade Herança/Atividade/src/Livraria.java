@@ -34,14 +34,60 @@ public class Livraria {
 
     public void consultarProduto() {
         System.out.print("Qual o título/autor do produto? ");
-        int codigo = inserir.nextInt();
+        String codigo = inserir.next();
 
         for (int i = 0; i < livros.size(); i++) {
-            if (livros.get(i).getAutor() == codigo) {
-                turmas.get(i).cadastrarAluno();
-                System.out.println();
-                break;
+            if (livros.get(i).getTitulo() == codigo || livros.get(i).getAutor() == codigo) {
+                livros.get(i).exibir();
             }
+        }
+
+        for (int i = 0; i < cds.size(); i++) {
+            if (cds.get(i).getTitulo() == codigo) {
+                cds.get(i).exibir();
+            }
+        }
+
+        for (int i = 0; i < dvds.size(); i++) {
+            if (dvds.get(i).getTitulo() == codigo) {
+                dvds.get(i).exibir();
+            }
+        }
+    }
+
+    public void exibirProdutos() {
+        System.out.println("Qual tipo de produto deseja exibir?");
+        System.out.println("1 - Livro");
+        System.out.println("2 - CD");
+        System.out.println("3 - DVD");
+        System.out.println("4 - Todos");
+        int x = inserir.nextInt();
+
+        while (x != 1 && x != 2 && x != 3 && x != 4) {
+            System.out.println("Opção inválida, digite novamente:");
+            x = inserir.nextInt();
+        }
+
+        if (x = 1) {
+            for (int i = 0; i < livros.size(); i++) {
+                livros(i).exibir();
+            }
+        }
+
+        if (x = 2) {
+            for (int i = 0; i < cds.size(); i++) {
+                cds(i).exibir();
+            }
+        }
+
+        if (x = 3) {
+            for (int i = 0; i < dvds.size(); i++) {
+                dvds(i).exibir();
+            }
+        }
+
+        if (x = 4) {
+            
         }
     }
 }

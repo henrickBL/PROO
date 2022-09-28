@@ -3,16 +3,16 @@ import java.util.Scanner;
 public class Dvd extends Livraria {
     Scanner inserir = new Scanner(System.in);
     private String titulo;
-    private float preco;
     private int duracao;
+    private float preco;
 
     Dvd() {
         System.out.println("Qual o título do DVD?");
         titulo = inserir.next();
-        System.out.println("Qual o preço do DVD?");
-        preco = inserir.nextFloat();
         System.out.println("Qual a duração do DVD?");
         duracao = inserir.nextInt();
+        System.out.println("Qual o preço do DVD?");
+        preco = inserir.nextFloat();
     }
 
     public void Exibir() {
@@ -23,8 +23,19 @@ public class Dvd extends Livraria {
         System.out.println("");
     }
 
-    public float calcularDesconto() {
-        this.preco = preco - (preco * 15/100);
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public int getDuracao() {
+        return duracao;
+    }
+
+    public float getPreco() {
         return preco;
+    }
+
+    public float calcularDesconto() {
+        return preco - (preco * 15/100);
     }
 }
