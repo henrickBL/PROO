@@ -31,4 +31,17 @@ public class Livraria {
             dvds.add(new Dvd());
         }
     }
+
+    public void consultarProduto() {
+        System.out.print("Qual o título/autor do produto? ");
+        int codigo = inserir.nextInt();
+
+        for (int i = 0; i < livros.size(); i++) {
+            if (livros.get(i).getAutor() == codigo) {
+                turmas.get(i).cadastrarAluno();
+                System.out.println();
+                break;
+            }
+        }
+    }
 }

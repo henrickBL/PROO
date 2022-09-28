@@ -3,16 +3,16 @@ import java.util.Scanner;
 public class Livro extends Livraria {
     Scanner inserir = new Scanner(System.in);
     private String titulo;
-    private float preco;
     private String autor;
+    private float preco;
 
     Livro() {
         System.out.println("Qual o título do livro?");
         titulo = inserir.next();
-        System.out.println("Qual o preço do livro?");
-        preco = inserir.nextFloat();
         System.out.println("Qual o autor do livro?");
         autor = inserir.next();
+        System.out.println("Qual o preço do livro?");
+        preco = inserir.nextFloat();
     }
 
     public void Exibir() {
@@ -23,8 +23,20 @@ public class Livro extends Livraria {
         System.out.println("");
     }
 
-    public float calcularDesconto() {
-        this.preco = preco - (preco * 30/100);
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public float getPreco() {
         return preco;
+    }
+
+    public float calcularDesconto() {
+        
+        return preco - (preco * 30/100);
     }
 }
