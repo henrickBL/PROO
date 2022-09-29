@@ -7,7 +7,11 @@ public class Livraria {
     private ArrayList<Cd> cds = new ArrayList<>();
     private ArrayList<Dvd> dvds = new ArrayList<>();
 
-    public void addLivro() {
+    Livraria() {
+        System.out.println("Livraria ok!");
+    }
+
+    public void addProduto() {
         System.out.println("Qual tipo de objeto deseja adicionar?");
         System.out.println("1 - Livro");
         System.out.println("2 - CD");
@@ -19,15 +23,15 @@ public class Livraria {
             x = inserir.nextInt();
         }
 
-        if (x = 1) {
+        if (x == 1) {
             livros.add(new Livro());
         }
 
-        if (x = 2) {
+        if (x == 2) {
             cds.add(new Cd());
         }
 
-        if (x = 3) {
+        if (x == 3) {
             dvds.add(new Dvd());
         }
     }
@@ -35,59 +39,52 @@ public class Livraria {
     public void consultarProduto() {
         System.out.print("Qual o título/autor do produto? ");
         String codigo = inserir.next();
+        boolean naoEncontrado = true;
 
         for (int i = 0; i < livros.size(); i++) {
-            if (livros.get(i).getTitulo() == codigo || livros.get(i).getAutor() == codigo) {
-                livros.get(i).exibir();
+            if (livros.get(i).getTitulo().equalsIgnoreCase(codigo) || livros.get(i).getAutor().equalsIgnoreCase(codigo)) {
+                livros.get(i).Exibir();
+                naoEncontrado = false;
             }
         }
 
         for (int i = 0; i < cds.size(); i++) {
-            if (cds.get(i).getTitulo() == codigo) {
-                cds.get(i).exibir();
+            if (cds.get(i).getTitulo().equalsIgnoreCase(codigo)) {
+                cds.get(i).Exibir();
+                naoEncontrado = false;
             }
         }
 
         for (int i = 0; i < dvds.size(); i++) {
-            if (dvds.get(i).getTitulo() == codigo) {
-                dvds.get(i).exibir();
+            if (dvds.get(i).getTitulo().equalsIgnoreCase(codigo)) {
+                dvds.get(i).Exibir();
+                naoEncontrado = false;
             }
+        }
+
+        if (naoEncontrado) {
+            System.out.println("Produto não encontrado/inexistente!");
+            System.out.println("Verifique a ortografia e tente novamente.");
         }
     }
 
     public void exibirProdutos() {
-        System.out.println("Qual tipo de produto deseja exibir?");
-        System.out.println("1 - Livro");
-        System.out.println("2 - CD");
-        System.out.println("3 - DVD");
-        System.out.println("4 - Todos");
-        int x = inserir.nextInt();
-
-        while (x != 1 && x != 2 && x != 3 && x != 4) {
-            System.out.println("Opção inválida, digite novamente:");
-            x = inserir.nextInt();
+        System.out.println(" ");
+        System.out.println("Livros: ");
+        for (int i = 0; i < livros.size(); i++) {
+            livros.get(i).Exibir();
         }
 
-        if (x = 1) {
-            for (int i = 0; i < livros.size(); i++) {
-                livros(i).exibir();
-            }
+        System.out.println(" ");
+        System.out.println("CD's: ");
+        for (int i = 0; i < cds.size(); i++) {
+            cds.get(i).Exibir();
         }
 
-        if (x = 2) {
-            for (int i = 0; i < cds.size(); i++) {
-                cds(i).exibir();
-            }
-        }
-
-        if (x = 3) {
-            for (int i = 0; i < dvds.size(); i++) {
-                dvds(i).exibir();
-            }
-        }
-
-        if (x = 4) {
-            
+        System.out.println(" ");
+        System.out.println("DVD's: ");
+        for (int i = 0; i < dvds.size(); i++) {
+            dvds.get(i).Exibir();
         }
     }
 }
